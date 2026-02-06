@@ -1,0 +1,496 @@
+{
+  "$description": "Design tokens for RefData, based on the Massachusetts Design System (mass.gov). Follows the DTCG specification v2025.10.",
+
+  "color": {
+    "$description": "Color palette derived from the Massachusetts Design System",
+
+    "brand": {
+      "$type": "color",
+      "$description": "Core brand colors",
+
+      "bay-blue": {
+        "$value": { "colorSpace": "srgb", "components": [0.078, 0.333, 0.561] },
+        "$description": "Primary brand color — Bay Blue (#14558F)"
+      },
+      "berkshires-green": {
+        "$value": { "colorSpace": "srgb", "components": [0.220, 0.522, 0.341] },
+        "$description": "Accent brand color — Berkshires Green (#388557)"
+      },
+      "duckling-yellow": {
+        "$value": { "colorSpace": "srgb", "components": [0.965, 0.773, 0.106] },
+        "$description": "Highlight brand color — Duckling Yellow (#F6C51B)"
+      },
+      "independence-cranberry": {
+        "$value": { "colorSpace": "srgb", "components": [0.408, 0.039, 0.114] },
+        "$description": "Supporting brand color — Independence Cranberry (#680A1D)"
+      },
+      "granite-gray": {
+        "$value": { "colorSpace": "srgb", "components": [0.325, 0.325, 0.325] },
+        "$description": "Neutral brand color — Granite Gray (#535353)"
+      }
+    },
+
+    "interactive": {
+      "$type": "color",
+      "$description": "Interactive states for primary actions (Bay Blue palette)",
+
+      "default": {
+        "$value": "{color.brand.bay-blue}",
+        "$description": "Default interactive state (#14558F)"
+      },
+      "hover": {
+        "$value": { "colorSpace": "srgb", "components": [0.263, 0.467, 0.647] },
+        "$description": "Hover state (#4377A5)"
+      },
+      "active": {
+        "$value": { "colorSpace": "srgb", "components": [0.063, 0.267, 0.447] },
+        "$description": "Active/pressed state (#104472)"
+      },
+      "disabled": {
+        "$value": { "colorSpace": "srgb", "components": [0.941, 0.941, 0.941] },
+        "$description": "Disabled state (#F0F0F0)"
+      },
+      "focus": {
+        "$value": "{color.focus.light-background}",
+        "$description": "Focus ring color (#0088FF)"
+      }
+    },
+
+    "interactive-accent": {
+      "$type": "color",
+      "$description": "Interactive states for accent/secondary actions (Berkshires Green palette)",
+
+      "default": {
+        "$value": { "colorSpace": "srgb", "components": [0.196, 0.471, 0.306] },
+        "$description": "Default accent interactive state (#32784E)"
+      },
+      "hover": {
+        "$value": "{color.brand.berkshires-green}",
+        "$description": "Hover state (#388557)"
+      },
+      "active": {
+        "$value": { "colorSpace": "srgb", "components": [0.153, 0.365, 0.239] },
+        "$description": "Active/pressed state (#275D3D)"
+      },
+      "disabled": {
+        "$value": "{color.interactive.disabled}",
+        "$description": "Disabled state (#F0F0F0)"
+      },
+      "focus": {
+        "$value": "{color.focus.light-background}",
+        "$description": "Focus ring color (#0088FF)"
+      }
+    },
+
+    "status": {
+      "$type": "color",
+      "$description": "Semantic status/feedback colors",
+
+      "success": {
+        "$value": { "colorSpace": "srgb", "components": [0.141, 0.659, 0.314] },
+        "$description": "Success — positive outcomes (#24A850)"
+      },
+      "warning": {
+        "$value": { "colorSpace": "srgb", "components": [0.965, 0.714, 0.133] },
+        "$description": "Warning — caution signals (#F6B622)"
+      },
+      "danger": {
+        "$value": { "colorSpace": "srgb", "components": [0.804, 0.051, 0.051] },
+        "$description": "Danger — errors and critical issues (#CD0D0D)"
+      }
+    },
+
+    "focus": {
+      "$type": "color",
+      "$description": "Focus indicator colors for accessibility",
+
+      "light-background": {
+        "$value": { "colorSpace": "srgb", "components": [0.0, 0.533, 1.0] },
+        "$description": "Focus ring on light backgrounds (#0088FF)"
+      },
+      "dark-background": {
+        "$value": { "colorSpace": "srgb", "components": [0.698, 0.859, 1.0] },
+        "$description": "Focus ring on dark backgrounds (#B2DBFF)"
+      }
+    },
+
+    "neutral": {
+      "$type": "color",
+      "$description": "Neutral base colors",
+
+      "white": {
+        "$value": { "colorSpace": "srgb", "components": [1.0, 1.0, 1.0] },
+        "$description": "White (#FFFFFF)"
+      },
+      "black": {
+        "$value": { "colorSpace": "srgb", "components": [0.0, 0.0, 0.0] },
+        "$description": "Black (#000000)"
+      }
+    }
+  },
+
+  "typography": {
+    "$description": "Typography tokens based on Noto Sans typeface",
+
+    "fontFamily": {
+      "$type": "fontFamily",
+      "$description": "Font family stacks",
+
+      "primary": {
+        "$value": ["Noto Sans", "Arial", "Helvetica", "sans-serif"],
+        "$description": "Primary typeface — Noto Sans with system fallbacks"
+      }
+    },
+
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$description": "Permitted font weights",
+
+      "regular": {
+        "$value": 400,
+        "$description": "Regular weight — used for body text"
+      },
+      "semibold": {
+        "$value": 600,
+        "$description": "SemiBold weight — used for headings"
+      }
+    },
+
+    "fontSize": {
+      "$type": "dimension",
+      "$description": "Type scale based on 4px increments",
+
+      "xs": {
+        "$value": { "value": 0.875, "unit": "rem" },
+        "$description": "Extra small — 14px"
+      },
+      "sm": {
+        "$value": { "value": 1, "unit": "rem" },
+        "$description": "Small / body minimum — 16px"
+      },
+      "md": {
+        "$value": { "value": 1.125, "unit": "rem" },
+        "$description": "Medium — 18px"
+      },
+      "lg": {
+        "$value": { "value": 1.25, "unit": "rem" },
+        "$description": "Large — 20px"
+      },
+      "xl": {
+        "$value": { "value": 1.5, "unit": "rem" },
+        "$description": "Extra large — 24px"
+      },
+      "2xl": {
+        "$value": { "value": 1.75, "unit": "rem" },
+        "$description": "2X large — 28px"
+      },
+      "3xl": {
+        "$value": { "value": 2, "unit": "rem" },
+        "$description": "3X large — 32px"
+      },
+      "4xl": {
+        "$value": { "value": 2.25, "unit": "rem" },
+        "$description": "4X large — 36px"
+      },
+      "5xl": {
+        "$value": { "value": 2.5, "unit": "rem" },
+        "$description": "5X large — 40px"
+      }
+    },
+
+    "lineHeight": {
+      "$type": "number",
+      "$description": "Line height multipliers",
+
+      "body": {
+        "$value": 1.8,
+        "$description": "Body text line height — 180%"
+      },
+      "heading": {
+        "$value": 1.3,
+        "$description": "Heading line height"
+      },
+      "tight": {
+        "$value": 1.2,
+        "$description": "Tight line height for large display text"
+      }
+    },
+
+    "style": {
+      "$type": "typography",
+      "$description": "Composite typography styles combining family, size, weight, and line height",
+
+      "heading-xl": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.5xl}",
+          "fontWeight": "{typography.fontWeight.semibold}",
+          "lineHeight": "{typography.lineHeight.tight}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Extra large heading — 40px semibold"
+      },
+      "heading-lg": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.3xl}",
+          "fontWeight": "{typography.fontWeight.semibold}",
+          "lineHeight": "{typography.lineHeight.heading}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Large heading — 32px semibold"
+      },
+      "heading-md": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.xl}",
+          "fontWeight": "{typography.fontWeight.semibold}",
+          "lineHeight": "{typography.lineHeight.heading}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Medium heading — 24px semibold"
+      },
+      "heading-sm": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.lg}",
+          "fontWeight": "{typography.fontWeight.semibold}",
+          "lineHeight": "{typography.lineHeight.heading}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Small heading — 20px semibold"
+      },
+      "body-lg": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.md}",
+          "fontWeight": "{typography.fontWeight.regular}",
+          "lineHeight": "{typography.lineHeight.body}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Large body text — 18px regular"
+      },
+      "body-md": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.sm}",
+          "fontWeight": "{typography.fontWeight.regular}",
+          "lineHeight": "{typography.lineHeight.body}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Default body text — 16px regular"
+      },
+      "body-sm": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.xs}",
+          "fontWeight": "{typography.fontWeight.regular}",
+          "lineHeight": "{typography.lineHeight.body}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Small body text — 14px regular"
+      },
+      "label": {
+        "$value": {
+          "fontFamily": "{typography.fontFamily.primary}",
+          "fontSize": "{typography.fontSize.xs}",
+          "fontWeight": "{typography.fontWeight.semibold}",
+          "lineHeight": "{typography.lineHeight.heading}",
+          "letterSpacing": { "value": 0, "unit": "rem" }
+        },
+        "$description": "Labels for buttons, links, menus, form elements — 14px semibold"
+      }
+    }
+  },
+
+  "spacing": {
+    "$type": "dimension",
+    "$description": "Spacing scale based on a 4px grid system",
+
+    "xxs": {
+      "$value": { "value": 0.25, "unit": "rem" },
+      "$description": "4px"
+    },
+    "xs": {
+      "$value": { "value": 0.5, "unit": "rem" },
+      "$description": "8px"
+    },
+    "sm": {
+      "$value": { "value": 0.75, "unit": "rem" },
+      "$description": "12px"
+    },
+    "md": {
+      "$value": { "value": 1, "unit": "rem" },
+      "$description": "16px"
+    },
+    "lg": {
+      "$value": { "value": 1.25, "unit": "rem" },
+      "$description": "20px"
+    },
+    "xl": {
+      "$value": { "value": 1.5, "unit": "rem" },
+      "$description": "24px"
+    },
+    "2xl": {
+      "$value": { "value": 2, "unit": "rem" },
+      "$description": "32px"
+    },
+    "3xl": {
+      "$value": { "value": 2.5, "unit": "rem" },
+      "$description": "40px"
+    },
+    "4xl": {
+      "$value": { "value": 3, "unit": "rem" },
+      "$description": "48px"
+    },
+    "5xl": {
+      "$value": { "value": 4, "unit": "rem" },
+      "$description": "64px"
+    }
+  },
+
+  "borderRadius": {
+    "$type": "dimension",
+    "$description": "Corner radius values following the 4px unit system",
+
+    "sm": {
+      "$value": { "value": 2, "unit": "px" },
+      "$description": "Small — for elements 24px and below"
+    },
+    "md": {
+      "$value": { "value": 4, "unit": "px" },
+      "$description": "Medium — for elements 25-43px"
+    },
+    "lg": {
+      "$value": { "value": 8, "unit": "px" },
+      "$description": "Large — primary size for buttons, cards, inputs, alerts (elements 44px+)"
+    }
+  },
+
+  "border": {
+    "$type": "border",
+    "$description": "Border styles",
+
+    "default": {
+      "$value": {
+        "color": "{color.brand.granite-gray}",
+        "width": { "value": 1, "unit": "px" },
+        "style": "solid"
+      },
+      "$description": "Default border using Granite Gray"
+    },
+    "light": {
+      "$value": {
+        "color": "{color.interactive.disabled}",
+        "width": { "value": 1, "unit": "px" },
+        "style": "solid"
+      },
+      "$description": "Light border for subtle dividers"
+    }
+  },
+
+  "elevation": {
+    "$type": "shadow",
+    "$description": "Elevation levels using box shadows to create depth hierarchy",
+
+    "low": {
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0.0, 0.0, 0.0], "alpha": 0.1 },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 1, "unit": "px" },
+        "blur": { "value": 3, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      },
+      "$description": "Low elevation — cards, contained sections"
+    },
+    "medium": {
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0.0, 0.0, 0.0], "alpha": 0.15 },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 4, "unit": "px" },
+        "blur": { "value": 8, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      },
+      "$description": "Medium elevation — dropdowns, popovers"
+    },
+    "high": {
+      "$value": {
+        "color": { "colorSpace": "srgb", "components": [0.0, 0.0, 0.0], "alpha": 0.2 },
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 8, "unit": "px" },
+        "blur": { "value": 24, "unit": "px" },
+        "spread": { "value": 0, "unit": "px" }
+      },
+      "$description": "High elevation — modals, overlays"
+    }
+  },
+
+  "icon": {
+    "$type": "dimension",
+    "$description": "Icon sizing tokens. Uses Phosphor Icons library (phosphoricons.com). Regular weight for icons >24px, Bold weight for icons <=24px.",
+
+    "sm": {
+      "$value": { "value": 16, "unit": "px" },
+      "$description": "Small icon — 16px (use Bold weight)"
+    },
+    "md": {
+      "$value": { "value": 20, "unit": "px" },
+      "$description": "Medium icon — 20px (use Bold weight)"
+    },
+    "lg": {
+      "$value": { "value": 24, "unit": "px" },
+      "$description": "Large icon — 24px (use Bold weight)"
+    },
+    "xl": {
+      "$value": { "value": 32, "unit": "px" },
+      "$description": "Extra large icon — 32px (use Regular weight)"
+    },
+
+    "$extensions": {
+      "org.mass.gov.icon": {
+        "library": "Phosphor Icons",
+        "source": "https://phosphoricons.com",
+        "weightThreshold": 24,
+        "weightBelowThreshold": "bold",
+        "weightAboveThreshold": "regular"
+      }
+    }
+  },
+
+  "breakpoint": {
+    "$type": "dimension",
+    "$description": "Responsive breakpoints for layout adaptation",
+
+    "mobile": {
+      "$value": { "value": 480, "unit": "px" },
+      "$description": "Mobile breakpoint"
+    },
+    "tablet": {
+      "$value": { "value": 768, "unit": "px" },
+      "$description": "Tablet breakpoint"
+    },
+    "desktop": {
+      "$value": { "value": 1024, "unit": "px" },
+      "$description": "Desktop breakpoint"
+    },
+    "wide": {
+      "$value": { "value": 1280, "unit": "px" },
+      "$description": "Wide desktop breakpoint"
+    }
+  },
+
+  "seal": {
+    "$description": "Massachusetts State Seal usage guidelines. These are not CSS tokens but reference metadata for correct seal usage.",
+
+    "$extensions": {
+      "org.mass.gov.seal": {
+        "minSize": { "digital": "45px", "print": "1in" },
+        "maxSize": { "digital": "200px", "print": "2in" },
+        "clearSpaceRatio": 0.25,
+        "aspectRatio": "1:1",
+        "variants": ["full-color", "black", "gray", "white"],
+        "contrastRequirement": "3:1 minimum"
+      }
+    }
+  }
+}

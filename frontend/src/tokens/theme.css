@@ -1,0 +1,67 @@
+:root {
+  /* Brand Colors */
+  --color-brand-bay-blue: #14558F;
+  --color-brand-berkshires-green: #388557;
+  --color-brand-duckling-yellow: #F6C51B;
+  --color-brand-independence-cranberry: #680A1D;
+  --color-brand-granite-gray: #535353;
+
+  /* Interactive Colors */
+  --color-interactive-default: var(--color-brand-bay-blue);
+  --color-interactive-hover: #4377A5;
+  --color-interactive-active: #104472;
+  --color-interactive-disabled: #F0F0F0;
+  --color-interactive-accent-default: #32784E;
+  --color-interactive-accent-hover: var(--color-brand-berkshires-green);
+  --color-interactive-accent-active: #275D3D;
+
+  /* Status Colors */
+  --color-status-success: #24A850;
+  --color-status-warning: #F6B622;
+  --color-status-danger: #CD0D0D;
+
+  /* Focus */
+  --color-focus: #0088FF;
+
+  /* Neutrals */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-black: #000000;
+
+  /* Typography */
+  --font-family-primary: 'Noto Sans', Arial, Helvetica, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-size-xs: 0.875rem;   /* 14px */
+  --font-size-sm: 1rem;       /* 16px */
+  --font-size-md: 1.125rem;   /* 18px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.75rem;   /* 28px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 2.5rem;    /* 40px */
+  --line-height-body: 1.8;
+  --line-height-heading: 1.3;
+
+  /* Spacing */
+  --spacing-xxs: 0.25rem;   /* 4px */
+  --spacing-xs: 0.5rem;     /* 8px */
+  --spacing-sm: 0.75rem;    /* 12px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 2.5rem;    /* 40px */
+  --spacing-3xl: 3rem;      /* 48px */
+  --spacing-4xl: 3.5rem;    /* 56px */
+  --spacing-5xl: 4rem;      /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Shadows */
+  --shadow-low: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-high: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
