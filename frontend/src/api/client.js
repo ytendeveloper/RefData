@@ -22,7 +22,7 @@ export async function addElements(structureId, elements) {
   return res.data;
 }
 
-export async function searchElements(structureId, q = '') {
-  const res = await api.get(`/structures/${structureId}/elements`, { params: { q } });
+export async function searchElements(structureId, q = '', skip = 0, limit = 50) {
+  const res = await api.get(`/structures/${structureId}/elements`, { params: { q, skip, limit } });
   return res.data;
 }

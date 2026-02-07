@@ -39,3 +39,10 @@ class ElementResponse(BaseModel):
     values: dict[str, Any]
     created_at: datetime
     updated_at: datetime
+
+
+class PaginatedElements(BaseModel):
+    items: list[ElementResponse]
+    total: int
+    skip: int
+    limit: int

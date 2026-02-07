@@ -17,7 +17,7 @@ export default function Navbar() {
     <nav style={styles.nav}>
       <div style={styles.inner}>
         <Link to="/" style={styles.brand}>
-          <span style={styles.brandMark}>RD</span>
+          <span style={styles.brandDot} />
           Reference Data
         </Link>
         <div style={styles.links}>
@@ -48,8 +48,9 @@ export default function Navbar() {
 
 const styles = {
   nav: {
-    backgroundColor: theme.color.charcoal,
-    borderBottom: `1px solid ${theme.color.ink}`,
+    backgroundColor: theme.color.bgCard,
+    borderBottom: `1.5px solid ${theme.color.border}`,
+    boxShadow: theme.shadow.sm,
   },
   inner: {
     display: 'flex',
@@ -61,59 +62,54 @@ const styles = {
   },
   brand: {
     fontFamily: theme.font.display,
-    fontSize: theme.font.size2xl,
-    fontWeight: theme.font.weightRegular,
-    color: theme.color.ivory,
+    fontSize: theme.font.sizeXl,
+    fontWeight: theme.font.weightBold,
+    color: theme.color.rose,
     textDecoration: 'none',
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing.sm,
-    letterSpacing: '-0.02em',
+    gap: theme.spacing.xs,
   },
-  brandMark: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 32,
-    height: 32,
-    backgroundColor: theme.color.gold,
-    color: theme.color.charcoal,
-    fontFamily: theme.font.display,
-    fontWeight: theme.font.weightBold,
-    fontSize: theme.font.sizeXs,
-    letterSpacing: '0.08em',
-    borderRadius: theme.radius.sm,
+  brandDot: {
+    display: 'inline-block',
+    width: 10,
+    height: 10,
+    borderRadius: '50%',
+    backgroundColor: '#C4929E',
+    boxShadow: '3px 0 0 0 #9AB8A0, 6px 0 0 0 #9BA4D4',
   },
   links: {
     display: 'flex',
-    gap: '1px',
-    marginLeft: 'auto',
+    gap: '2px',
+    backgroundColor: theme.color.bgInset,
+    borderRadius: theme.radius.pill,
+    padding: '3px',
   },
   link: {
-    color: theme.color.stone,
+    color: theme.color.textSecondary,
     textDecoration: 'none',
-    fontFamily: theme.font.body,
+    fontFamily: theme.font.display,
     fontSize: theme.font.sizeSm,
-    fontWeight: theme.font.weightLight,
+    fontWeight: theme.font.weightMedium,
     padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-    borderRadius: theme.radius.sm,
+    borderRadius: theme.radius.pill,
     display: 'flex',
     alignItems: 'center',
-    transition: 'all 0.25s ease',
-    letterSpacing: '0.02em',
+    transition: 'all 0.2s ease',
   },
   linkIcon: {
     marginRight: '0.35rem',
     fontSize: '1.1em',
-    opacity: 0.6,
+    opacity: 0.7,
   },
   linkHover: {
-    color: theme.color.goldLight,
-    backgroundColor: 'rgba(184, 151, 90, 0.08)',
+    color: theme.color.textPrimary,
+    backgroundColor: 'rgba(196, 146, 158, 0.08)',
   },
   linkActive: {
-    color: theme.color.gold,
-    backgroundColor: 'rgba(184, 151, 90, 0.12)',
-    fontWeight: theme.font.weightMedium,
+    color: theme.color.textPrimary,
+    backgroundColor: theme.color.bgCard,
+    boxShadow: theme.shadow.sm,
+    fontWeight: theme.font.weightSemibold,
   },
 };

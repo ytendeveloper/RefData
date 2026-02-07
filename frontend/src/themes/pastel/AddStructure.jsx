@@ -108,7 +108,7 @@ export default function AddStructure() {
           </div>
 
           <h3 style={styles.sectionHeading}>
-            <span style={styles.sectionRule} />
+            <span style={{ ...styles.sectionDot, backgroundColor: '#9AB8A0' }} />
             Fields
           </h3>
           {fields.map((field, i) => (
@@ -146,7 +146,7 @@ export default function AddStructure() {
           </button>
 
           <h3 style={styles.sectionHeading}>
-            <span style={styles.sectionRule} />
+            <span style={{ ...styles.sectionDot, backgroundColor: '#9BA4D4' }} />
             Initial Elements <span style={styles.optional}>(optional)</span>
           </h3>
           {elements.map((el, i) => (
@@ -188,15 +188,15 @@ const styles = {
   },
   card: {
     backgroundColor: theme.color.bgCard,
-    borderRadius: theme.radius.lg,
+    borderRadius: theme.radius.xl,
     padding: `0 ${theme.spacing['2xl']} ${theme.spacing['2xl']}`,
-    boxShadow: theme.shadow.md,
-    border: `1px solid ${theme.color.border}`,
+    boxShadow: theme.shadow.lg,
+    border: `1.5px solid ${theme.color.border}`,
     overflow: 'hidden',
   },
   headerBar: {
-    height: 3,
-    background: `linear-gradient(90deg, ${theme.color.gold} 0%, ${theme.color.goldLight} 50%, ${theme.color.goldLighter} 100%)`,
+    height: 4,
+    background: 'linear-gradient(90deg, #C4929E 0%, #9AB8A0 50%, #9BA4D4 100%)',
     margin: `0 -${theme.spacing['2xl']}`,
     marginBottom: theme.spacing.xl,
   },
@@ -209,20 +209,19 @@ const styles = {
     color: theme.color.textSecondary,
     display: 'flex',
     alignItems: 'center',
-    gap: theme.spacing.sm,
+    gap: theme.spacing.xs,
     marginBottom: theme.spacing.sm,
   },
-  sectionRule: {
+  sectionDot: {
     display: 'inline-block',
-    width: 24,
-    height: 1,
-    backgroundColor: theme.color.gold,
+    width: 8,
+    height: 8,
+    borderRadius: '50%',
   },
   optional: {
-    fontWeight: theme.font.weightLight,
+    fontWeight: theme.font.weightRegular,
     fontSize: theme.font.sizeXs,
     color: theme.color.textMuted,
-    fontStyle: 'italic',
   },
   formGroup: {
     marginBottom: theme.spacing.lg,
@@ -254,22 +253,21 @@ const styles = {
     marginBottom: theme.spacing.xs,
     padding: `${theme.spacing.xs} ${theme.spacing.sm}`,
     backgroundColor: theme.color.bgInset,
-    borderRadius: theme.radius.sm,
-    border: `1px solid ${theme.color.borderSubtle}`,
+    borderRadius: theme.radius.md,
+    border: `1px solid ${theme.color.border}`,
   },
   addBtn: {
     background: 'none',
-    border: `1px dashed ${theme.color.borderStrong}`,
+    border: `1.5px dashed ${theme.color.borderStrong}`,
     padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
     color: theme.color.textMuted,
-    borderRadius: theme.radius.sm,
+    borderRadius: theme.radius.md,
     marginBottom: theme.spacing.md,
-    fontWeight: theme.font.weightLight,
   },
   removeBtn: {
-    backgroundColor: 'transparent',
-    color: theme.color.danger,
-    border: `1px solid ${theme.color.border}`,
+    backgroundColor: theme.color.roseLighter,
+    color: theme.color.roseDark,
+    border: 'none',
     padding: '0.35rem',
     borderRadius: theme.radius.sm,
     minWidth: 28,
@@ -277,22 +275,21 @@ const styles = {
     fontSize: '1rem',
   },
   submitBtn: {
-    backgroundColor: theme.color.gold,
-    color: theme.color.charcoal,
+    backgroundColor: theme.color.rose,
+    color: theme.color.textOnDark,
     border: 'none',
     padding: `${theme.spacing.sm} ${theme.spacing['2xl']}`,
     fontSize: theme.font.sizeMd,
-    fontWeight: theme.font.weightSemibold,
-    borderRadius: theme.radius.sm,
-    letterSpacing: '0.04em',
-    boxShadow: '0 2px 12px rgba(184, 151, 90, 0.2)',
+    fontWeight: theme.font.weightBold,
+    borderRadius: theme.radius.pill,
+    boxShadow: '0 2px 12px rgba(196, 146, 158, 0.25)',
   },
   message: {
     padding: `${theme.spacing.sm} ${theme.spacing.md}`,
-    backgroundColor: theme.color.goldLighter,
-    borderLeft: `3px solid ${theme.color.gold}`,
+    backgroundColor: theme.color.sageLighter,
+    borderLeft: `3px solid ${theme.color.sage}`,
     borderRadius: theme.radius.sm,
-    color: theme.color.goldDark,
+    color: theme.color.sageDark,
     fontWeight: theme.font.weightMedium,
     fontSize: theme.font.sizeSm,
   },

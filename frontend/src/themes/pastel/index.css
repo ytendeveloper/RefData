@@ -2,67 +2,62 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: var(--font-body);
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-regular);
   line-height: 1.7;
   color: var(--color-text-primary);
   background-color: var(--color-bg);
   min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
   color: var(--color-text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-2xl);
 }
 
 h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-lg);
 }
 
 input, select, textarea {
   font-family: var(--font-body);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-light);
   padding: 0.6rem 0.85rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
   background: var(--color-bg-card);
   color: var(--color-text-primary);
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(184, 151, 90, 0.1);
+  border-color: var(--color-rose-light);
+  box-shadow: 0 0 0 3px var(--color-rose-lighter);
 }
 
 input::placeholder {
   color: var(--color-text-muted);
-  font-weight: var(--font-weight-light);
 }
 
 button {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  border-radius: var(--radius-sm);
-  transition: all 0.25s ease;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
 }
 
 button:hover {
@@ -80,7 +75,7 @@ button:focus-visible {
 }
 
 a {
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 a:focus-visible {
@@ -95,35 +90,45 @@ table {
 }
 
 label {
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-medium);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
+/* Table row hover */
 tbody tr {
   cursor: default;
 }
 
 tbody tr:hover {
-  background-color: var(--color-gold-lighter) !important;
+  background-color: var(--color-rose-lighter) !important;
 }
 
 tbody tr:hover td {
   color: var(--color-text-primary);
 }
 
+/* Nav link hover */
 nav a:hover {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-elevated);
 }
 
+/* Add/dashed button hover */
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card hover lift for field rows */
 .field-row:hover {
-  border-color: var(--color-gold-light);
+  border-color: var(--color-rose-light);
 }
 
 ::selection {
-  background-color: var(--color-gold-lighter);
+  background-color: var(--color-rose-lighter);
   color: var(--color-text-primary);
 }

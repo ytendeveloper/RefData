@@ -4,7 +4,7 @@ from bson import ObjectId
 from fastapi import APIRouter, HTTPException
 
 from app.database import elements_collection, structures_collection
-from app.models import ElementBulkCreate, ElementResponse
+from app.models import ElementBulkCreate, ElementResponse, PaginatedElements
 
 router = APIRouter(tags=["elements"])
 
@@ -58,9 +58,11 @@ async def add_elements(structure_id: str, body: ElementBulkCreate):
 
 
 @router.get(
-    "/structures/{structure_id}/elements", response_model=list[ElementResponse]
+    "/structures/{structure_id}/elements", response_model=PaginatedElements
 )
-async def search_elements(structure_id: str, q: str = ""):
+async def search_elements(
+    structure_id: str, q: str = "", skip: int = 0, limit: int = 50
+):
     await _get_structure(structure_id)
 
     query: dict = {"structure_id": ObjectId(structure_id)}
@@ -71,9 +73,15 @@ async def search_elements(structure_id: str, q: str = ""):
             for key in await _get_field_names(structure_id)
         ]
 
-    cursor = elements_collection.find(query).sort("created_at", -1)
-    results = await cursor.to_list(length=200)
-    return [element_doc_to_response(doc) for doc in results]
+    total = await elements_collection.count_documents(query)
+    cursor = elements_collection.find(query).sort("created_at", -1).skip(skip).limit(limit)
+    results = await cursor.to_list(length=limit)
+    return PaginatedElements(
+        items=[element_doc_to_response(doc) for doc in results],
+        total=total,
+        skip=skip,
+        limit=limit,
+    )
 
 
 async def _get_field_names(structure_id: str) -> list[str]:

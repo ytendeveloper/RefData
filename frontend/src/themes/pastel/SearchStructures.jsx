@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { MdSearch, MdTableChart, MdClose } from 'react-icons/md';
+import { MdSearch, MdTableChart } from 'react-icons/md';
 import { listStructures } from '../api/client';
 import { theme } from '../tokens/theme';
 
@@ -32,24 +32,12 @@ export default function SearchStructures() {
         <div style={styles.headerBar} />
         <h1 style={styles.heading}>Structures</h1>
         <form onSubmit={handleSearch} style={styles.searchRow}>
-          <div style={styles.inputWrap}>
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search by name or description..."
-              style={styles.input}
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => { setQuery(''); load(''); }}
-                style={styles.clearBtn}
-                aria-label="Clear search"
-              >
-                <MdClose />
-              </button>
-            )}
-          </div>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search by name or description..."
+            style={styles.input}
+          />
           <button type="submit" style={styles.btn}>
             <MdSearch style={styles.btnIcon} />Search
           </button>
@@ -79,7 +67,7 @@ export default function SearchStructures() {
                     style={{
                       ...styles.tr,
                       backgroundColor: hoveredRow === s.id
-                        ? theme.color.goldLighter
+                        ? '#F5E1E6'
                         : i % 2 === 0 ? 'transparent' : theme.color.bgInset,
                       cursor: 'pointer',
                     }}
@@ -114,15 +102,15 @@ const styles = {
   },
   card: {
     backgroundColor: theme.color.bgCard,
-    borderRadius: theme.radius.lg,
+    borderRadius: theme.radius.xl,
     padding: `0 ${theme.spacing['2xl']} ${theme.spacing['2xl']}`,
-    boxShadow: theme.shadow.md,
-    border: `1px solid ${theme.color.border}`,
+    boxShadow: theme.shadow.lg,
+    border: `1.5px solid ${theme.color.border}`,
     overflow: 'hidden',
   },
   headerBar: {
-    height: 3,
-    background: `linear-gradient(90deg, ${theme.color.goldDark} 0%, ${theme.color.gold} 50%, ${theme.color.goldLight} 100%)`,
+    height: 4,
+    background: 'linear-gradient(90deg, #9BA4D4 0%, #A1C4D6 50%, #9AB8A0 100%)',
     margin: `0 -${theme.spacing['2xl']}`,
     marginBottom: theme.spacing.xl,
   },
@@ -136,88 +124,63 @@ const styles = {
     gap: theme.spacing.xs,
     marginBottom: theme.spacing.xl,
   },
-  inputWrap: {
-    flex: 1,
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-  },
   input: {
     flex: 1,
-    paddingRight: '2.2rem',
-  },
-  clearBtn: {
-    position: 'absolute',
-    right: '0.4rem',
-    background: 'none',
-    border: 'none',
-    padding: '0.25rem',
-    color: theme.color.textMuted,
-    fontSize: '1.1rem',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-    borderRadius: theme.radius.sm,
-    boxShadow: 'none',
-    lineHeight: 1,
   },
   btn: {
-    backgroundColor: theme.color.charcoal,
-    color: theme.color.ivory,
+    backgroundColor: theme.color.peri,
+    color: theme.color.textOnDark,
     border: 'none',
     padding: `${theme.spacing.xs} ${theme.spacing.lg}`,
-    fontWeight: theme.font.weightMedium,
-    borderRadius: theme.radius.sm,
-    letterSpacing: '0.04em',
+    fontWeight: theme.font.weightBold,
+    borderRadius: theme.radius.pill,
+    boxShadow: '0 2px 10px rgba(155, 164, 212, 0.2)',
   },
   tableWrap: {
-    borderRadius: theme.radius.md,
+    borderRadius: theme.radius.lg,
     overflow: 'hidden',
-    border: `1px solid ${theme.color.border}`,
+    border: `1.5px solid ${theme.color.border}`,
   },
   th: {
     textAlign: 'left',
     padding: `${theme.spacing.sm} ${theme.spacing.md}`,
-    backgroundColor: theme.color.charcoal,
-    color: theme.color.goldLight,
-    fontFamily: theme.font.body,
-    fontWeight: theme.font.weightMedium,
+    backgroundColor: theme.color.periLighter,
+    color: theme.color.periDark,
+    fontFamily: theme.font.display,
+    fontWeight: theme.font.weightBold,
     fontSize: theme.font.sizeXs,
     textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    borderBottom: `1px solid ${theme.color.ink}`,
+    letterSpacing: '0.06em',
+    borderBottom: `1.5px solid ${theme.color.border}`,
   },
   td: {
     padding: `${theme.spacing.sm} ${theme.spacing.md}`,
     fontSize: theme.font.sizeSm,
     color: theme.color.textPrimary,
-    borderBottom: `1px solid ${theme.color.borderSubtle}`,
+    borderBottom: `1px solid ${theme.color.border}`,
   },
   tr: {
-    transition: 'background-color 0.2s ease',
+    transition: 'background-color 0.15s ease',
   },
   nameBadge: {
     fontFamily: theme.font.display,
     fontWeight: theme.font.weightSemibold,
-    color: theme.color.goldDark,
-    fontSize: theme.font.sizeMd,
+    color: theme.color.periDark,
   },
   fieldPills: {
     display: 'flex',
-    flexDirection: 'column',
+    flexWrap: 'wrap',
     gap: '0.3rem',
   },
   pill: {
-    display: 'block',
-    padding: '0.1rem 0.55rem',
-    backgroundColor: theme.color.linen,
-    color: theme.color.slate,
-    borderRadius: theme.radius.sm,
+    display: 'inline-block',
+    padding: '0.1rem 0.5rem',
+    backgroundColor: theme.color.sageLighter,
+    color: theme.color.sageDark,
+    borderRadius: theme.radius.pill,
     fontSize: theme.font.sizeXs,
-    fontWeight: theme.font.weightRegular,
+    fontWeight: theme.font.weightMedium,
     fontFamily: theme.font.body,
-    border: `1px solid ${theme.color.sand}`,
   },
   emptyState: {
     textAlign: 'center',
@@ -230,8 +193,7 @@ const styles = {
   emptyText: {
     color: theme.color.textMuted,
     fontFamily: theme.font.display,
-    fontWeight: theme.font.weightRegular,
-    fontStyle: 'italic',
+    fontWeight: theme.font.weightMedium,
   },
   btnIcon: {
     marginRight: '0.3rem',

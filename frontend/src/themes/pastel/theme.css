@@ -1,0 +1,91 @@
+:root {
+  /* === SOFT PASTEL PALETTE === */
+
+  /* Primary — dusty rose family */
+  --color-rose: #C4929E;
+  --color-rose-light: #E8C5CC;
+  --color-rose-lighter: #F5E1E6;
+  --color-rose-dark: #A87080;
+
+  /* Secondary — sage green family */
+  --color-sage: #9AB8A0;
+  --color-sage-light: #C5DBC9;
+  --color-sage-lighter: #E4F0E6;
+  --color-sage-dark: #7A9980;
+
+  /* Accent — periwinkle family */
+  --color-peri: #9BA4D4;
+  --color-peri-light: #C4C9E8;
+  --color-peri-lighter: #E5E7F5;
+  --color-peri-dark: #7B84BA;
+
+  /* Warm accent — peach */
+  --color-peach: #E8B89D;
+  --color-peach-light: #F5D9C8;
+  --color-peach-lighter: #FFF0E8;
+
+  /* Cool accent — powder blue */
+  --color-powder: #A1C4D6;
+  --color-powder-light: #C8DEE8;
+  --color-powder-lighter: #E8F2F7;
+
+  /* Surfaces */
+  --color-bg: #FAF7F5;
+  --color-bg-card: #FFFFFF;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-inset: #F5F1EE;
+
+  /* Text */
+  --color-text-primary: #4A3F4B;
+  --color-text-secondary: #7D7080;
+  --color-text-muted: #AEA3B0;
+  --color-text-on-dark: #FDFBFA;
+
+  /* Status */
+  --color-success: #8BBF9F;
+  --color-warning: #E4C27A;
+  --color-danger: #D4868A;
+  --color-focus: #9BA4D4;
+
+  /* Borders */
+  --color-border: #EDE7E3;
+  --color-border-strong: #DDD4CE;
+
+  /* Typography */
+  --font-display: 'Quicksand', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xs: 0.78rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.15rem;
+  --font-size-xl: 1.4rem;
+  --font-size-2xl: 1.75rem;
+  --font-size-3xl: 2.1rem;
+
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 2.75rem;
+  --spacing-3xl: 3.5rem;
+
+  /* Border Radius — soft & rounded */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 100px;
+
+  /* Shadows — feathered & gentle */
+  --shadow-sm: 0 1px 4px rgba(74, 63, 75, 0.04);
+  --shadow-md: 0 2px 12px rgba(74, 63, 75, 0.05), 0 1px 3px rgba(74, 63, 75, 0.03);
+  --shadow-lg: 0 4px 24px rgba(74, 63, 75, 0.06), 0 2px 6px rgba(74, 63, 75, 0.03);
+  --shadow-xl: 0 8px 40px rgba(74, 63, 75, 0.07), 0 2px 8px rgba(74, 63, 75, 0.03);
+}
